@@ -1,10 +1,14 @@
 package main
 
 import (
-	"video-encoding-for-streaming-service/core"
+	"vqueue/core"
 )
 
 func main() {
-	core.readFile()
-	core.GenerateOutputStructure()
+	fileName := "demo.mp4"
+	sourceVideoFilePath := "input/" + fileName
+	outputPath := core.GenerateOutputStructure()
+	if core.ReadVideo(sourceVideoFilePath) {
+		core.ProcessVideo(sourceVideoFilePath, outputPath)
+	}
 }

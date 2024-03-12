@@ -13,7 +13,7 @@ func generateDirectory(directoryName string) {
 	}
 }
 
-func GenerateOutputStructure() {
+func GenerateOutputStructure() string {
 	outputDirectories := [3]string{"video-thumbnail", "timeline-thumbnail", "videos"}
 	outputParentDirectory := "output/" + time.Now().Format(time.RFC850)
 	log.Print("Creating output files in '" + outputParentDirectory + "'")
@@ -22,4 +22,6 @@ func GenerateOutputStructure() {
 	for _, item := range outputDirectories {
 		generateDirectory(outputParentDirectory + "/" + item)
 	}
+
+	return outputParentDirectory
 }

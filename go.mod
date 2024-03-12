@@ -1,4 +1,4 @@
-module video-encoding-for-streaming-service
+module vqueue
 
 go 1.19
 
